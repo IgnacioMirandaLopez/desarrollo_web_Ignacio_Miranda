@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <link rel="stylesheet" href="actividad.css">
+<div id="tabla">
+  <h2>Información actividad</h2>
+  <table>
+    <tr>
+      <th>Inicio</th>
+      <td>2025-04-05 10:00</td>
+    </tr>
+    <tr>
+      <th>Término</th>
+      <td>2025-04-05 13:00</td>
+    </tr>
+    <tr>
+      <th>Comuna</th>
+      <td>Las Condes</td>
+    </tr>
+    <tr>
+      <th>Sector</th>
+      <td>Parque Araucano</td>
+    </tr>
+    <tr>
+      <th>Tema</th>
+      <td>Patinaje sobre césped</td>
+    </tr>
+    <tr>
+      <th>Nombre Organizador</th>
+      <td>Alexis Sáncez</td>
+    </tr>
+    <tr>
+      <th>Fotos</th>
+      <td>
+        <img src="cesped1.jpg" width="320" height="240" onclick="agrandarfoto1()">
+        <img src="cesped2.jpg" width="320" height="240" onclick="agrandarfoto2()">
+      </td>
+    </tr>
+  </table>
+  <button onclick="location.href='listado.html'" style="cursor: pointer;">Volver a Listado de actividades</button>
+
+  <button onclick="location.href='Portadaa.html'" style="cursor: pointer;">Volver a Portada</button>
+</div>
+
+<div id="foto1grande" style="display: none;">
+  <img src="cesped1.jpg" width="800" height="600"><br>
+  <button onclick="cerrar()"  style="cursor: pointer;">Cerrar</button>
+</div>
+<div id="foto2grande" style="display: none;">
+  <img src="cesped2.jpg" width="800" height="600"><br>
+  <button onclick="cerrar()"  style="cursor: pointer;">Cerrar</button>
+</div>
+
+
+
+<script src="expfoto.js"></script>

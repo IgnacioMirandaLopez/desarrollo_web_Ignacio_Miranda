@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Actividad</title>
+    <link rel="stylesheet" href="info.css">
+</head>
+<body>
+<h1>Información de actividad</h1>
+
+<div id="val-box" hidden>
+    <h2 id="val-msg"></h2>
+    <ul id="val-list"></ul>
+</div>
+<form id="formularioActividad" name="formularioActividad" action="" method="POST">
+
+    <h2>Información del lugar</h2>
+    <div>
+        <label for="region">Región</label>
+        <select name="region" id="region" required>
+            <option value="">Seleccione una región</option>
+        </select><br>
+
+        <label for="comuna">Comuna</label>
+        <select name="comuna" id="comuna" required>
+            <option value="">Seleccione una comuna</option>
+        </select><br>
+
+        <label for="sector">Sector</label>
+        <input type="text" name="sector" id="sector" maxlength="100" required><br>
+    </div>
+
+    <h2>Datos del organizador</h2>
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" maxlength="200" required><br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" maxlength="100" required><br>
+
+        <label for="celular">Número de celular</label>
+        <input type="tel" name="celular" id="celular"><br>
+
+        <label for="contacto">Contactar por</label>
+        <select name="contacto" id="contacto" required>
+            <option value="">Seleccione un método de contacto</option>
+        </select><br>
+
+        <label for="contacto-id" style="display: none;">ID o URL de contacto</label>
+        <textarea name="contacto-id" id="contacto-id" rows="4" cols="50" style="display: none;" minlength="4" maxlength="50" required></textarea><br>
+    </div>
+
+    <h2>Información de la actividad</h2>
+    <div>
+        <label for="inicio">Día hora de inicio</label>
+        <input type="datetime-local" name="inicio" id="inicio"><br>
+
+        <label for="termino">Día hora término</label>
+        <input type="datetime-local" name="termino" id="termino"><br>
+
+        <label for="descripcion">Descripción</label>
+        <textarea name="descripcion" id="descripcion" rows="10" cols="50"></textarea><br>
+
+        <label for="tema">Tema</label>
+        <select name="tema" id="tema" required>
+            <option value="">Seleccione tema</option>
+        </select><br>
+
+        <label for="tema-descripcion" style="display: none;">Describe tu tema</label>
+        <textarea name="tema-descripcion" id="tema-descripcion" rows="4" cols="50" style="display: none;" minlength="3" maxlength="50"></textarea><br>
+
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto"><br>
+    </div>
+
+    <div>
+        <button type="button" id="submit-btn">Agregar esta actividad</button>
+    </div>
+</form>
+
+<div id="mensajeFinal" style="display: none;">
+    <p>Hemos recibido su información, muchas gracias y suerte en su actividad.</p>
+    <button onclick="volverAPortada()">Volver a la portada</button>
+</div>
+
+<script src="validainfo1.js"></script>
+<script src="infojs.js"></script>
+<script src="quien.js"></script>
+<script src="tema.js"></script>
+
+</body>
+</html>
