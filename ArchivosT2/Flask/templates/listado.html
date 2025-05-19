@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Listado de Actividades</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='listado.css') }}">
+  <style>
+    td {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Listado de Actividades</h1>
+
+<table>
+  <tr>
+    <th>Inicio</th>
+    <th>Término</th>
+    <th>Comuna</th>
+    <th>Sector</th>
+    <th>Tema</th>
+    <th>Nombre Organizador</th>
+    <th>Total fotos</th>
+  </tr>
+  {% for actividad in actividades %}
+  <tr onclick="window.location.href='{{ url_for(act.html) }}'">
+    <td>{{ actividad.inicio.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ actividad.termino.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ actividad.comuna }}</td>
+    <td>{{ actividad.sector }}</td>
+    <td>{{ actividad.tema }}</td>
+    <td>{{ actividad.organizador }}</td>
+    <td>{{ actividad.total_fotos }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div>
+    <button onclick="location.href='{{ url_for(Portadaa.html) }}'" type="button" id="volver">Volver a portada</button>
+</div>
+
+</body>
+</html>

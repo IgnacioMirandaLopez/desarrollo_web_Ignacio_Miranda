@@ -1,0 +1,1 @@
+MI computador nunca me dejó ocupar pip porque me decia que no tenía python instalado. probré por todas partes y nu pude, por lo que probablemente fallen hartas cosas. Hice la conexión siguendo más o mkenos los auxiliares pero no pude probar nada.

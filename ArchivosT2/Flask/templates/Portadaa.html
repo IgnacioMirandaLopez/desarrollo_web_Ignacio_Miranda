@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Portada</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='portada.css') }}">
+</head>
+<body>
+
+<h1>Pagina Tarea 1</h1>
+
+<h2> Agregar actividad</h2>
+<button onclick="location.href='{{ url_for(info1.html) }}'" style="cursor: pointer;">Ir a Agregar actividad</button>
+<h2> Ver listado de actividades</h2>
+<button onclick="location.href='{{ url_for(listado.html) }}'" style="cursor: pointer;">Ir a Ver listado de actividades</button>
+<h2> Estadísticas</h2>
+<button onclick="location.href='{{ url_for(estadisticas.html) }}'" style="cursor: pointer;">Ir a Estadísticas</button>
+
+<table>
+  <tr>
+    <th>Inicio</th>
+    <th>Término</th>
+    <th>Comuna</th>
+    <th>Sector</th>
+    <th>Tema</th>
+    <th>Foto</th>
+  </tr>
+  {% for actividad in actividades %}
+  <tr>
+    <td>{{ actividad.inicio.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ actividad.termino.strftime('%Y-%m-%d %H:%M') }}</td>
+    <td>{{ actividad.comuna }}</td>
+    <td>{{ actividad.sector }}</td>
+    <td>{{ actividad.tema }}</td>
+    <td>
+      {% if actividad.foto %}
+        <img src="{{ url_for('static') }}" width="90" height="90" alt="Foto actividad">
+      {% else %}
+        Sin foto
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
